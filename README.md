@@ -32,7 +32,7 @@ I'm an **Electrical Engineering student** who fell for software. I like building
 🤖  Integrating AI (Gemini) and live financial data into real products
 🧮  Solving DSA problems on LeetCode in C++
 🤖  Writing robotics / kinematics simulators from scratch
-🎯  Looking for SDE internships and placements
+🎯  Looking for PRODUCT/ANALYST internships and placements
 ```
 
 ---
