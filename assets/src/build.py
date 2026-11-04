@@ -1,29 +1,29 @@
-"""Generates the animated SVGs used by the profile README.
+"""Generates the animated black & white SVGs used by the profile README.
+
+Every image is written twice, as <name>-light.svg and <name>-dark.svg, so the
+README can swap them with <picture> to match the reader's GitHub theme.
 
 Edit the text below, then run:  python3 assets/src/build.py
 """
 import os
-import random
 from xml.sax.saxutils import escape
 
 OUT = os.path.join(os.path.dirname(__file__), "..")
-random.seed(11)
 
 # ---- design tokens ---------------------------------------------------------
-BG = "#0b0820"
-CYAN = "#00f7ff"
-VIOLET = "#b57bff"
-PINK = "#ff8fc7"
-TEXT = "#ece7ff"
-MUTED = "#a99fd0"
-FONT = "font-family=\"'SF Pro Display','Segoe UI','Helvetica Neue',Arial,sans-serif\""
+THEMES = {
+    "light": dict(paper="#ffffff", ink="#111111", soft="#ececec", muted="#6b6b6b", dots="#e4e4e4"),
+    "dark": dict(paper="#0d1117", ink="#f2f2f2", soft="#2b313a", muted="#9aa0a6", dots="#1f252d"),
+}
+SANS = "font-family=\"ui-rounded,'SF Pro Rounded','Nunito','Segoe UI',system-ui,sans-serif\""
+MONO = "font-family=\"ui-monospace,'SF Mono','JetBrains Mono',Menlo,Consolas,monospace\""
 
-SHIMMER = (
-    f'<linearGradient id="sh" x1="0" y1="0" x2="1" y2="0">'
-    f'<stop offset="0" stop-color="{CYAN}"/><stop offset="0.5" stop-color="#c9a0ff"/><stop offset="1" stop-color="{CYAN}"/>'
-    f'<animate attributeName="x1" values="-1;0" dur="4s" repeatCount="indefinite"/>'
-    f'<animate attributeName="x2" values="0;1" dur="4s" repeatCount="indefinite"/></linearGradient>'
-)
+TAGLINES = [
+    "Electrical engineer who builds products end to end",
+    "Full-stack  ·  Next.js  ·  Supabase  ·  MERN",
+    "Founder of PupMeow, live for pet families in Delhi NCR",
+    "Open to Product / Analyst internships",
+]
 
 
 def e(s):
@@ -33,32 +33,47 @@ def e(s):
 def svg(w, h, body, defs=""):
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}">'
-        f"<defs>{SHIMMER}{defs}</defs>{body}</svg>"
+        f"<defs>{defs}</defs>{body}</svg>"
     )
 
 
-def text(x, y, s, size=14, fill=TEXT, weight=400, anchor="start", spacing=0, extra=""):
+def text(x, y, s, size, fill, weight=400, anchor="middle", spacing=0, font=SANS, extra="", attrs=""):
     return (
         f'<text x="{x}" y="{y}" font-size="{size}" font-weight="{weight}" fill="{fill}" '
-        f'text-anchor="{anchor}" letter-spacing="{spacing}" {FONT}>{e(s)}{extra}</text>'
+        f'text-anchor="{anchor}" letter-spacing="{spacing}" {font} {attrs}>{e(s)}{extra}</text>'
     )
 
 
-def particles(n, w, h, y0):
-    out = []
-    for _ in range(n):
-        x = random.randint(10, w - 10)
-        y = random.randint(y0, h + 20)
-        r = random.choice([1.2, 1.8, 2.4, 3])
-        d = random.uniform(6, 13)
-        b = random.uniform(0, 8)
-        col = random.choice([CYAN, VIOLET, "#ffffff"])
-        out.append(
-            f'<circle cx="{x}" cy="{y}" r="{r}" fill="{col}" opacity="0">'
-            f'<animate attributeName="cy" values="{y};-10" dur="{d:.1f}s" begin="{b:.1f}s" repeatCount="indefinite"/>'
-            f'<animate attributeName="opacity" values="0;0.9;0.9;0" dur="{d:.1f}s" begin="{b:.1f}s" repeatCount="indefinite"/></circle>'
-        )
-    return "".join(out)
+def spin(a, b, cx, cy, dur, begin=0, spline=True):
+    """Rock an element between angles a and b around (cx, cy)."""
+    ease = ' calcMode="spline" keyTimes="0;0.5;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"' if spline else ""
+    return (
+        f'<animateTransform attributeName="transform" type="rotate" values="{a} {cx} {cy};{b} {cx} {cy};{a} {cx} {cy}"'
+        f' dur="{dur}s" begin="{begin}s" repeatCount="indefinite"{ease}/>'
+    )
+
+
+def blink(ry, dur=4.2, begin=0):
+    return (
+        f'<animate attributeName="ry" values="{ry};{ry};0.4;{ry}" keyTimes="0;0.9;0.95;1" '
+        f'dur="{dur}s" begin="{begin}s" repeatCount="indefinite"/>'
+    )
+
+
+def card(w, h, t):
+    """Rounded paper card with a faint dot grid and an ink outline."""
+    defs = (
+        f'<pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">'
+        f'<circle cx="2" cy="2" r="1.3" fill="{t["dots"]}"/></pattern>'
+        f'<clipPath id="c"><rect width="{w}" height="{h}" rx="22"/></clipPath>'
+    )
+    back = f'<rect width="{w}" height="{h}" rx="22" fill="{t["paper"]}"/><rect width="{w}" height="{h}" fill="url(#dots)" clip-path="url(#c)"/>'
+    edge = f'<rect x="1.5" y="1.5" width="{w - 3}" height="{h - 3}" rx="21" fill="none" stroke="{t["ink"]}" stroke-width="2"/>'
+    return defs, back, edge
+
+
+def heart(x, y, s, fill):
+    return f'<path transform="translate({x} {y}) scale({s})" d="M0 4 C-8 -2 -6 -9 0 -5 C6 -9 8 -2 0 4 Z" fill="{fill}"/>'
 
 
 def paw(x, y, s, color, rot=90):
@@ -71,19 +86,301 @@ def paw(x, y, s, color, rot=90):
     )
 
 
-def paw_trail(width, y, count, colors, s=1.0, dur=6.0):
+def paw_trail(width, y, count, color, s=1.0, dur=6.0, x0=0):
     """Paw prints that appear one after another, like a pet walking across."""
     out = []
     step = width / count
     for i in range(count):
-        x = step * (i + 0.5)
-        dy = -7 if i % 2 == 0 else 7
+        x = x0 + step * (i + 0.5)
+        dy = -6 if i % 2 == 0 else 6
         b = dur * i / count
         out.append(
-            f'<g opacity="0.18">{paw(round(x, 1), y + dy, s, colors[i % len(colors)])}'
-            f'<animate attributeName="opacity" values="0.18;1;1;0.18" keyTimes="0;0.05;0.45;0.6" dur="{dur}s" begin="{b:.2f}s" repeatCount="indefinite"/></g>'
+            f'<g opacity="0.1">{paw(round(x, 1), y + dy, s, color)}'
+            f'<animate attributeName="opacity" values="0.1;0.9;0.9;0.1" keyTimes="0;0.05;0.45;0.6" dur="{dur}s" begin="{b:.2f}s" repeatCount="indefinite"/></g>'
         )
     return "".join(out)
+
+
+# ---- characters (origin = where the feet touch the ground) -----------------
+def sitting_cat(x, y, s, t):
+    ink, paper, soft = t["ink"], t["paper"], t["soft"]
+    st = f'stroke="{ink}" stroke-width="3" stroke-linejoin="round"'
+    whiskers = "".join(
+        f'<line x1="{sx * 20}" y1="{y1}" x2="{sx * 38}" y2="{y2}" stroke="{ink}" stroke-width="1.6" stroke-linecap="round"/>'
+        for sx in (-1, 1) for y1, y2 in ((-77, -81), (-73, -71))
+    )
+    return (
+        f'<g transform="translate({x} {y}) scale({s})">'
+        # tail sways behind the body
+        f'<path d="M22 -8 C56 -6 62 -46 44 -62" fill="none" stroke="{ink}" stroke-width="6" stroke-linecap="round">{spin(-8, 10, 22, -8, 2.6)}</path>'
+        f'<path d="M-30 0 C-34 -40 -20 -62 0 -62 C20 -62 34 -40 30 0 Z" fill="{paper}" {st}/>'
+        f'<path d="M-10 -40 Q0 -34 10 -40" fill="none" stroke="{soft}" stroke-width="3" stroke-linecap="round"/>'
+        f'<ellipse cx="-11" cy="-3" rx="9" ry="6" fill="{paper}" {st}/><ellipse cx="11" cy="-3" rx="9" ry="6" fill="{paper}" {st}/>'
+        # head tilts gently
+        f'<g>{spin(-5, 5, 0, -62, 5)}'
+        f'<path d="M-25 -90 L-21 -118 L-4 -103 Z" fill="{paper}" {st}/><path d="M25 -90 L21 -118 L4 -103 Z" fill="{paper}" {st}/>'
+        f'<path d="M-20 -97 L-18.5 -110 L-11 -103 Z" fill="{soft}"/><path d="M20 -97 L18.5 -110 L11 -103 Z" fill="{soft}"/>'
+        f'<ellipse cx="0" cy="-82" rx="30" ry="25" fill="{paper}" {st}/>'
+        f'<ellipse cx="-11" cy="-85" rx="3.2" ry="4.2" fill="{ink}">{blink(4.2)}</ellipse>'
+        f'<ellipse cx="11" cy="-85" rx="3.2" ry="4.2" fill="{ink}">{blink(4.2)}</ellipse>'
+        f'<ellipse cx="-19" cy="-75" rx="5" ry="3" fill="{soft}"/><ellipse cx="19" cy="-75" rx="5" ry="3" fill="{soft}"/>'
+        f'<path d="M-3 -78 L3 -78 L0 -74.5 Z" fill="{ink}"/>'
+        f'<path d="M-6 -71 Q-3 -68 0 -72 Q3 -68 6 -71" fill="none" stroke="{ink}" stroke-width="2" stroke-linecap="round"/>'
+        f"{whiskers}</g></g>"
+    )
+
+
+def sitting_dog(x, y, s, t):
+    ink, paper, soft = t["ink"], t["paper"], t["soft"]
+    st = f'stroke="{ink}" stroke-width="3" stroke-linejoin="round"'
+    return (
+        f'<g transform="translate({x} {y}) scale({s})">'
+        # happy tail wag
+        f'<path d="M-24 -12 C-44 -14 -52 -30 -50 -46" fill="none" stroke="{ink}" stroke-width="7" stroke-linecap="round">{spin(-20, 22, -24, -12, 0.45)}</path>'
+        f'<path d="M-32 0 C-36 -38 -22 -60 0 -60 C22 -60 36 -38 32 0 Z" fill="{paper}" {st}/>'
+        f'<ellipse cx="0" cy="-34" rx="13" ry="16" fill="{soft}"/>'
+        f'<ellipse cx="-12" cy="-3" rx="10" ry="6" fill="{paper}" {st}/><ellipse cx="12" cy="-3" rx="10" ry="6" fill="{paper}" {st}/>'
+        f'<g>{spin(4, -4, 0, -60, 3.4)}'
+        # floppy ears flap
+        f'<g>{spin(0, 10, -24, -104, 1.7)}<ellipse cx="-31" cy="-84" rx="11" ry="22" transform="rotate(18 -31 -84)" fill="{ink}"/></g>'
+        f'<g>{spin(0, -10, 24, -104, 1.7)}<ellipse cx="31" cy="-84" rx="11" ry="22" transform="rotate(-18 31 -84)" fill="{ink}"/></g>'
+        f'<ellipse cx="0" cy="-86" rx="31" ry="28" fill="{paper}" {st}/>'
+        f'<ellipse cx="12" cy="-92" rx="9" ry="8" fill="{soft}"/>'
+        f'<ellipse cx="-12" cy="-92" rx="3.6" ry="4.2" fill="{ink}">{blink(4.2, 5.1, 1.3)}</ellipse>'
+        f'<ellipse cx="12" cy="-92" rx="3.6" ry="4.2" fill="{ink}">{blink(4.2, 5.1, 1.3)}</ellipse>'
+        f'<ellipse cx="0" cy="-75" rx="15" ry="11" fill="{paper}" {st}/>'
+        f'<ellipse cx="0" cy="-80" rx="5.5" ry="3.8" fill="{ink}"/>'
+        # panting tongue
+        f'<g><animateTransform attributeName="transform" type="translate" values="0 0;0 2.5;0 0" dur="0.55s" repeatCount="indefinite"/>'
+        f'<path d="M-5 -70 L-5 -63 Q0 -57 5 -63 L5 -70 Z" fill="{soft}" {st}/></g>'
+        f'<path d="M0 -76 L0 -71 M-8 -71 Q-4 -67 0 -71 Q4 -67 8 -71" fill="none" stroke="{ink}" stroke-width="2" stroke-linecap="round"/>'
+        f"</g></g>"
+    )
+
+
+def leg(hx, hy, color, width, dur, begin):
+    return (
+        f'<line x1="{hx}" y1="{hy}" x2="{hx}" y2="0" stroke="{color}" stroke-width="{width}" stroke-linecap="round">'
+        f"{spin(-22, 22, hx, hy, dur, begin)}</line>"
+    )
+
+
+def bob(dur):
+    return f'<animateTransform attributeName="transform" type="translate" values="0 0;0 -3;0 0" dur="{dur}s" repeatCount="indefinite"/>'
+
+
+def running_dog(x, t):
+    ink, paper, soft, muted = t["ink"], t["paper"], t["soft"], t["muted"]
+    st = f'stroke="{ink}" stroke-width="3" stroke-linejoin="round"'
+    d = 0.42
+    return (
+        f'<g transform="translate({x} 0)">'
+        + leg(-22, -30, muted, 7, d, -d / 2) + leg(24, -30, muted, 7, d, 0)
+        + f'<g>{bob(d / 2)}'
+        f'<path d="M-34 -44 C-46 -52 -50 -64 -46 -74" fill="none" stroke="{ink}" stroke-width="6" stroke-linecap="round">{spin(-15, 25, -34, -44, 0.3)}</path>'
+        f'<ellipse cx="0" cy="-40" rx="38" ry="17" fill="{paper}" {st}/>'
+        f'<ellipse cx="-10" cy="-46" rx="12" ry="7" fill="{soft}"/>'
+        f'<circle cx="40" cy="-60" r="17" fill="{paper}" {st}/>'
+        f'<ellipse cx="55" cy="-55" rx="11" ry="8" fill="{paper}" {st}/>'
+        f'<circle cx="63" cy="-57" r="3.4" fill="{ink}"/>'
+        f'<circle cx="45" cy="-64" r="2.8" fill="{ink}"/>'
+        f'<path d="M52 -48 Q54 -41 59 -44" fill="{soft}" stroke="{ink}" stroke-width="2"/>'
+        f'<g>{spin(-10, 15, 34, -72, 0.42)}<ellipse cx="32" cy="-60" rx="6.5" ry="13" transform="rotate(-15 32 -60)" fill="{ink}"/></g>'
+        f"</g>"
+        + leg(-26, -30, ink, 7, d, 0) + leg(20, -30, ink, 7, d, -d / 2)
+        + "</g>"
+    )
+
+
+def running_cat(x, t):
+    ink, paper, soft, muted = t["ink"], t["paper"], t["soft"], t["muted"]
+    st = f'stroke="{ink}" stroke-width="3" stroke-linejoin="round"'
+    d = 0.38
+    return (
+        f'<g transform="translate({x} 0)">'
+        + leg(-18, -26, muted, 6, d, -d / 2) + leg(20, -26, muted, 6, d, 0)
+        + f'<g>{bob(d / 2)}'
+        f'<path d="M-30 -38 C-52 -44 -54 -70 -40 -84" fill="none" stroke="{ink}" stroke-width="5" stroke-linecap="round">{spin(-8, 12, -30, -38, 1.1)}</path>'
+        f'<ellipse cx="0" cy="-34" rx="32" ry="13" fill="{paper}" {st}/>'
+        f'<path d="M-8 -46 Q-4 -38 0 -46 M4 -46 Q8 -38 12 -46" fill="none" stroke="{soft}" stroke-width="2.5"/>'
+        f'<path d="M24 -58 L26 -76 L37 -64 Z" fill="{paper}" {st}/><path d="M37 -64 L46 -77 L49 -59 Z" fill="{paper}" {st}/>'
+        f'<circle cx="37" cy="-52" r="14" fill="{paper}" {st}/>'
+        f'<ellipse cx="43" cy="-54" rx="2.3" ry="3" fill="{ink}">{blink(3, 3.6)}</ellipse>'
+        f'<circle cx="50.5" cy="-49" r="1.9" fill="{ink}"/>'
+        f'<path d="M48 -47 L62 -50 M48 -45 L62 -43" stroke="{ink}" stroke-width="1.4" stroke-linecap="round"/>'
+        f"</g>"
+        + leg(-22, -26, ink, 6, d, 0) + leg(16, -26, ink, 6, d, -d / 2)
+        + "</g>"
+    )
+
+
+def bouncing_ball(x, t):
+    ink, paper = t["ink"], t["paper"]
+    return (
+        f'<g transform="translate({x} 0)"><g>'
+        f'<animateTransform attributeName="transform" type="translate" values="0 -50;0 -10;0 -50" keyTimes="0;0.5;1" '
+        f'calcMode="spline" keySplines="0.55 0 1 0.45;0 0.55 0.45 1" dur="0.75s" repeatCount="indefinite"/>'
+        f'<g><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="0.9s" repeatCount="indefinite"/>'
+        f'<circle r="10" fill="{paper}" stroke="{ink}" stroke-width="2.6"/>'
+        f'<path d="M-10 0 Q0 -7 10 0 M-10 0 Q0 7 10 0" fill="none" stroke="{ink}" stroke-width="1.6"/></g></g></g>'
+    )
+
+
+def butterfly(t, path, dur):
+    ink, paper = t["ink"], t["paper"]
+    return (
+        f'<g><animateMotion path="{path}" dur="{dur}s" repeatCount="indefinite" rotate="0"/>'
+        f'<g><animateTransform attributeName="transform" type="scale" values="1 1;0.25 1;1 1" dur="0.28s" repeatCount="indefinite"/>'
+        f'<ellipse cx="-6" cy="-3" rx="6" ry="7" fill="{paper}" stroke="{ink}" stroke-width="2"/>'
+        f'<ellipse cx="6" cy="-3" rx="6" ry="7" fill="{paper}" stroke="{ink}" stroke-width="2"/>'
+        f'<ellipse cx="-4.5" cy="5" rx="4" ry="4" fill="{paper}" stroke="{ink}" stroke-width="2"/>'
+        f'<ellipse cx="4.5" cy="5" rx="4" ry="4" fill="{paper}" stroke="{ink}" stroke-width="2"/></g>'
+        f'<line x1="0" y1="-6" x2="0" y2="8" stroke="{ink}" stroke-width="2.6" stroke-linecap="round"/></g>'
+    )
+
+
+def floating(inner, x, y, dur, begin, rise=34, drift=10):
+    """Something that drifts up and fades out (hearts, zzz)."""
+    return (
+        f'<g transform="translate({x} {y})"><g opacity="0">'
+        f'<animateTransform attributeName="transform" type="translate" values="0 0;{drift} {-rise}" dur="{dur}s" begin="{begin}s" repeatCount="indefinite"/>'
+        f'<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.2;0.7;1" dur="{dur}s" begin="{begin}s" repeatCount="indefinite"/>'
+        f"{inner}</g></g>"
+    )
+
+
+def ground(x1, x2, y, t):
+    return f'<line x1="{x1}" y1="{y}" x2="{x2}" y2="{y}" stroke="{t["ink"]}" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 9"/>'
+
+
+# ---- header ----------------------------------------------------------------
+def header(t):
+    W, H = 1000, 336
+    defs, back, edge = card(W, H, t)
+    ink, muted = t["ink"], t["muted"]
+
+    n = len(TAGLINES)
+    slot = 3.6
+    seg = 1 / n
+    lines = "".join(
+        f'<g opacity="0">'
+        f'<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;{seg * 0.12:.3f};{seg * 0.88:.3f};{seg:.3f};1" dur="{slot * n}s" begin="{i * slot}s" repeatCount="indefinite"/>'
+        f'<animateTransform attributeName="transform" type="translate" values="0 10;0 0;0 0;0 -10;0 -10" keyTimes="0;{seg * 0.12:.3f};{seg * 0.88:.3f};{seg:.3f};1" dur="{slot * n}s" begin="{i * slot}s" repeatCount="indefinite"/>'
+        + text(500, 208, s, 19, muted, 500)
+        + "</g>"
+        for i, s in enumerate(TAGLINES)
+    )
+
+    squiggle = "M320 170" + "".join(" q10 -7 20 0 t20 0" for _ in range(9))
+    underline = (
+        f'<path d="{squiggle}" pathLength="100" fill="none" stroke="{ink}" stroke-width="3" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100">'
+        f'<animate attributeName="stroke-dashoffset" values="100;0;0;-100" keyTimes="0;0.25;0.8;1" dur="6s" repeatCount="indefinite"/></path>'
+    )
+
+    pills = ""
+    for i, label in enumerate(["PRODUCT", "ANALYTICS", "FULL-STACK"]):
+        px = 291 + i * 145
+        pills += (
+            f'<g transform="translate({px} 238)"><rect width="128" height="30" rx="15" fill="{t["paper"]}" stroke="{ink}" stroke-width="2"/>'
+            + text(64, 20, label, 12, ink, 700, "middle", 2.5, MONO)
+            + "</g>"
+        )
+
+    hearts = "".join(floating(heart(0, 0, 1.1, ink), 905 + dx, 150, 2.6, b) for dx, b in ((-12, 0), (14, 1.3)))
+
+    body = (
+        back
+        + text(500, 84, "hi, i'm", 15, muted, 500, "middle", 5, MONO)
+        + text(500, 152, "Ronak Singh", 76, ink, 800, "middle", -1)
+        + underline
+        + lines
+        + pills
+        + ground(40, 960, 286, t)
+        + sitting_cat(120, 284, 1.15, t)
+        + butterfly(t, "M215 80 C255 50 300 105 260 130 C230 150 190 120 215 80 Z", 7)
+        + sitting_dog(880, 284, 1.15, t)
+        + hearts
+        + paw_trail(W, 312, 18, ink, 0.75, 8)
+        + edge
+    )
+    return svg(W, H, body, defs)
+
+
+# ---- PupMeow: pets chasing a ball ------------------------------------------
+def pupmeow_walk(t):
+    W, H = 1000, 130
+    pack = (
+        f'<g><animateTransform attributeName="transform" type="translate" from="-320 0" to="{W + 120} 0" dur="12s" repeatCount="indefinite"/>'
+        + running_cat(0, t) + running_dog(150, t) + bouncing_ball(250, t)
+        + "</g>"
+    )
+    body = f'<g transform="translate(0 112)">{ground(10, W - 10, 2, t)}{pack}</g>'
+    return svg(W, H, body)
+
+
+def paws(t):
+    return svg(1000, 50, paw_trail(1000, 25, 20, t["ink"], 1.0, 7))
+
+
+# ---- footer ----------------------------------------------------------------
+def sleeping_cat(t):
+    ink, paper, soft = t["ink"], t["paper"], t["soft"]
+    st = f'stroke="{ink}" stroke-width="3" stroke-linejoin="round"'
+    breathe = '<animate attributeName="ry" values="27;30;27" dur="3.2s" repeatCount="indefinite"/><animate attributeName="cy" values="168;165;168" dur="3.2s" repeatCount="indefinite"/>'
+    zs = "".join(
+        floating(text(0, 0, "z", size, ink, 700), 112 + i * 6, 118 - i * 4, 3.6, i * 1.2, 30, 16)
+        for i, size in enumerate((14, 17, 20))
+    )
+    return (
+        f'<ellipse cx="180" cy="168" rx="54" ry="27" fill="{paper}" {st}>{breathe}</ellipse>'
+        f'<path d="M150 150 Q170 144 190 150" fill="none" stroke="{soft}" stroke-width="3" stroke-linecap="round"/>'
+        f'<path d="M232 176 C246 190 226 200 200 199 C172 198 142 198 128 194" fill="none" stroke="{ink}" stroke-width="6" stroke-linecap="round"/>'
+        f'<path d="M110 156 L108 130 L126 144 Z" fill="{paper}" {st}/><path d="M136 142 L150 124 L154 148 Z" fill="{paper}" {st}/>'
+        f'<circle cx="132" cy="166" r="25" fill="{paper}" {st}/>'
+        f'<path d="M118 166 Q123 171 128 166 M137 166 Q142 171 147 166" fill="none" stroke="{ink}" stroke-width="2.4" stroke-linecap="round"/>'
+        f'<ellipse cx="117" cy="176" rx="4.5" ry="2.6" fill="{soft}"/><ellipse cx="148" cy="176" rx="4.5" ry="2.6" fill="{soft}"/>'
+        f'<path d="M130 174 L135 174 L132.5 177 Z" fill="{ink}"/>'
+        + zs
+    )
+
+
+def lying_dog(t):
+    ink, paper, soft = t["ink"], t["paper"], t["soft"]
+    st = f'stroke="{ink}" stroke-width="3" stroke-linejoin="round"'
+    breathe = '<animate attributeName="ry" values="23;26;23" dur="3.6s" repeatCount="indefinite"/><animate attributeName="cy" values="172;169;172" dur="3.6s" repeatCount="indefinite"/>'
+    return (
+        f'<path d="M896 168 C916 160 928 146 926 132" fill="none" stroke="{ink}" stroke-width="7" stroke-linecap="round">{spin(-14, 18, 896, 168, 1.1)}</path>'
+        f'<ellipse cx="852" cy="172" rx="54" ry="23" fill="{paper}" {st}>{breathe}</ellipse>'
+        f'<ellipse cx="866" cy="160" rx="14" ry="8" fill="{soft}"/>'
+        f'<ellipse cx="884" cy="190" rx="17" ry="8" fill="{paper}" {st}/>'
+        f'<ellipse cx="790" cy="193" rx="15" ry="7" fill="{paper}" {st}/><ellipse cx="814" cy="195" rx="15" ry="7" fill="{paper}" {st}/>'
+        f'<circle cx="802" cy="168" r="25" fill="{paper}" {st}/>'
+        f'<g>{spin(0, 6, 812, 146, 2.4)}<ellipse cx="818" cy="164" rx="9" ry="19" transform="rotate(22 818 164)" fill="{ink}"/></g>'
+        f'<ellipse cx="782" cy="178" rx="12" ry="9" fill="{paper}" {st}/>'
+        f'<ellipse cx="773" cy="175" rx="4" ry="3" fill="{ink}"/>'
+        f'<path d="M788 162 Q793 167 798 162" fill="none" stroke="{ink}" stroke-width="2.4" stroke-linecap="round"/>'
+        + floating(heart(0, 0, 1.2, ink), 800, 130, 3.2, 0.6, 30, -6)
+    )
+
+
+def footer(t):
+    W, H = 1000, 240
+    defs, back, edge = card(W, H, t)
+    ink, muted = t["ink"], t["muted"]
+    body = (
+        back
+        + text(500, 84, "Thanks for stopping by!", 34, ink, 800, "middle", -0.5)
+        + text(500, 118, "learn  →  build  →  ship  →  repeat", 14, muted, 500, "middle", 2, MONO)
+        + f'<g transform="translate(500 158)"><rect x="-150" y="-19" width="300" height="34" rx="17" fill="{t["paper"]}" stroke="{ink}" stroke-width="2"/>'
+        + text(0, 3, "ronaksingh18062005@gmail.com", 13, ink, 600, "middle", 0.5, MONO)
+        + "</g>"
+        + ground(70, 260, 203, t) + ground(740, 950, 203, t)
+        + sleeping_cat(t)
+        + lying_dog(t)
+        + paw_trail(W, 222, 18, ink, 0.7, 8)
+        + edge
+    )
+    return svg(W, H, body, defs)
 
 
 def write(name, content):
@@ -91,78 +388,9 @@ def write(name, content):
         f.write(content)
 
 
-# ---- header ----------------------------------------------------------------
-def header():
-    pills = [("PRODUCT", CYAN), ("ANALYTICS", VIOLET), ("FULL-STACK", CYAN)]
-    pill_svg = ""
-    for i, (t, c) in enumerate(pills):
-        x = 245 + i * 185
-        pill_svg += (
-            f'<g transform="translate({x},250)"><rect width="140" height="34" rx="17" fill="{c}" fill-opacity="0.08" stroke="{c}" stroke-opacity="0.6">'
-            f'<animate attributeName="stroke-opacity" values="0.3;0.95;0.3" dur="3s" begin="{i * 0.8}s" repeatCount="indefinite"/></rect>'
-            + text(70, 22, t, 13, c, 600, "middle", 3)
-            + "</g>"
-        )
-    defs = (
-        '<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">'
-        '<stop offset="0" stop-color="#0b0820"><animate attributeName="stop-color" values="#0b0820;#1a0b3d;#07182e;#0b0820" dur="10s" repeatCount="indefinite"/></stop>'
-        '<stop offset="1" stop-color="#150a33"><animate attributeName="stop-color" values="#150a33;#06223a;#2a0e4f;#150a33" dur="10s" repeatCount="indefinite"/></stop></linearGradient>'
-        '<radialGradient id="g1"><stop offset="0" stop-color="#7b2ff7" stop-opacity="0.6"/><stop offset="1" stop-color="#7b2ff7" stop-opacity="0"/></radialGradient>'
-        f'<radialGradient id="g2"><stop offset="0" stop-color="{CYAN}" stop-opacity="0.45"/><stop offset="1" stop-color="{CYAN}" stop-opacity="0"/></radialGradient>'
-        '<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#7b2ff7" stroke-opacity="0.2"/>'
-        '<animateTransform attributeName="patternTransform" type="translate" from="0 0" to="40 40" dur="6s" repeatCount="indefinite"/></pattern>'
-        '<filter id="blur"><feGaussianBlur stdDeviation="6"/></filter><clipPath id="c"><rect width="1000" height="340" rx="20"/></clipPath>'
-    )
-    body = (
-        '<g clip-path="url(#c)"><rect width="1000" height="340" fill="url(#bg)"/><rect width="1000" height="340" fill="url(#grid)"/>'
-        '<ellipse cx="220" cy="90" rx="380" ry="210" fill="url(#g1)"><animate attributeName="cx" values="220;340;220" dur="9s" repeatCount="indefinite"/></ellipse>'
-        '<ellipse cx="820" cy="280" rx="380" ry="210" fill="url(#g2)"><animate attributeName="cx" values="820;680;820" dur="11s" repeatCount="indefinite"/></ellipse>'
-        + particles(40, 1000, 340, 260)
-        + text(500, 76, "HELLO, I'M", 15, CYAN, 500, "middle", 10, '<animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>')
-        + f'<text x="500" y="172" text-anchor="middle" font-size="100" font-weight="800" letter-spacing="4" fill="{CYAN}" filter="url(#blur)" opacity="0.4" {FONT}>RONAK SINGH'
-        '<animate attributeName="opacity" values="0.45;0.15;0.45" dur="3s" repeatCount="indefinite"/></text>'
-        + text(500, 172, "RONAK SINGH", 100, "url(#sh)", 800, "middle", 4)
-        + text(500, 218, "Electrical Engineer  •  Full Stack Builder  •  Product & Analytics Mind", 19, TEXT, 400, "middle")
-        + pill_svg
-        + paw_trail(1000, 314, 16, [CYAN, VIOLET, PINK], 0.85, 8)
-        + '</g><rect x="1" y="1" width="998" height="338" rx="20" fill="none" stroke="url(#sh)" stroke-width="1.5" opacity="0.8"/>'
-    )
-    write("header.svg", svg(1000, 340, body, defs))
-
-
-# ---- PupMeow paw-print trail -----------------------------------------------
-def paws():
-    write("paws.svg", svg(1000, 50, paw_trail(1000, 25, 20, ["#0e7c72", "#f2a93b", PINK, VIOLET], 1.1, 7)))
-
-
-# ---- footer ----------------------------------------------------------------
-def footer():
-    def wave(y, amp, color, op, dur, reverse=False):
-        d = f"M0 {y}" + "".join(f" Q{k * 500 + 125} {y - amp} {k * 500 + 250} {y} T{(k + 1) * 500} {y}" for k in range(5)) + " V260 H0 Z"
-        a, b = (-1000, 0) if reverse else (0, -1000)
-        return f'<path d="{d}" fill="{color}" opacity="{op}"><animateTransform attributeName="transform" type="translate" from="{a} 0" to="{b} 0" dur="{dur}s" repeatCount="indefinite"/></path>'
-
-    # a heart that beats next to the tagline
-    heart = (
-        f'<g transform="translate(500 136)"><path d="M0 6 C-14 -4 -9 -16 0 -9 C9 -16 14 -4 0 6 Z" fill="{PINK}">'
-        '<animateTransform attributeName="transform" type="scale" values="1;1.25;1;1.15;1" dur="1.4s" repeatCount="indefinite"/></path></g>'
-    )
-    defs = f'<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#150a33"/><stop offset="1" stop-color="{BG}"/></linearGradient><clipPath id="c"><rect width="1000" height="240" rx="20"/></clipPath>'
-    body = (
-        '<g clip-path="url(#c)"><rect width="1000" height="240" fill="url(#bg)"/>'
-        + particles(26, 1000, 240, 120)
-        + wave(160, 26, "#7b2ff7", 0.45, 16) + wave(176, 20, CYAN, 0.30, 11, True) + wave(194, 16, VIOLET, 0.40, 8)
-        + f'<rect y="208" width="1000" height="32" fill="{BG}" opacity="0.85"/>'
-        + text(500, 66, "Thanks for stopping by!", 32, "url(#sh)", 800, "middle")
-        + text(500, 100, "Learn  →  Build  →  Ship  →  Repeat", 16, MUTED, 500, "middle", 3)
-        + heart
-        + paw_trail(1000, 226, 18, [CYAN, VIOLET, PINK], 0.7, 8)
-        + '</g><rect x="1" y="1" width="998" height="238" rx="20" fill="none" stroke="url(#sh)" stroke-width="1.5" opacity="0.7"/>'
-    )
-    write("footer.svg", svg(1000, 240, body, defs))
-
-
 if __name__ == "__main__":
-    header()
-    paws()
-    footer()
+    for mode, t in THEMES.items():
+        write(f"header-{mode}.svg", header(t))
+        write(f"pupmeow-walk-{mode}.svg", pupmeow_walk(t))
+        write(f"paws-{mode}.svg", paws(t))
+        write(f"footer-{mode}.svg", footer(t))

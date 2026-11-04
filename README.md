@@ -1,26 +1,21 @@
 <!-- ============================================================= -->
 <!--  Profile README for Ronak Singh (Pragylucky)                  -->
-<!--  Header, footer and paw trail: python3 assets/src/build.py    -->
+<!--  Animated art (light + dark): python3 assets/src/build.py    -->
 <!-- ============================================================= -->
 
 <div align="center">
 
-<img src="assets/header.svg" width="100%" alt="Ronak Singh: Electrical Engineer, Full Stack Builder, Product & Analytics Mind"/>
-
-<a href="https://github.com/Pragylucky">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=800&color=00F7FF&center=true&vCenter=true&repeat=true&width=900&height=50&lines=Hi+there%2C+I'm+Ronak+%F0%9F%91%8B;Building+full-stack+apps+with+React+%26+Next.js+%E2%9A%9B%EF%B8%8F;Shipped+PupMeow+to+pupmeow.in+%F0%9F%90%BE;Turning+data+into+product+decisions+%F0%9F%93%8A;Solving+DSA+on+LeetCode+in+C%2B%2B+%F0%9F%A7%AE;Bridging+hardware+thinking+and+software+%E2%9A%A1;Open+to+Product+%2F+Analyst+internships+%F0%9F%8E%AF" alt="Typing animation"/>
-</a>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg"/>
+  <img src="assets/header-light.svg" width="100%" alt="Ronak Singh: Electrical engineer who builds products end to end. Product, Analytics, Full-stack."/>
+</picture>
 
 <br/>
 
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%" alt="divider"/>
-
-<br/><br/>
-
-<a href="https://www.linkedin.com/in/ronak-singh-79234328a/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
-<a href="https://leetcode.com/u/Pragy_lucky/"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=white"/></a>
-<a href="mailto:ronaksingh18062005@gmail.com"><img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/></a>
-<img src="https://komarev.com/ghpvc/?username=Pragylucky&label=Profile%20Views&color=00b8d4&style=for-the-badge"/>
+<a href="https://www.linkedin.com/in/ronak-singh-79234328a/"><img src="https://img.shields.io/badge/LinkedIn-111111?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+<a href="https://leetcode.com/u/Pragy_lucky/"><img src="https://img.shields.io/badge/LeetCode-111111?style=for-the-badge&logo=leetcode&logoColor=white"/></a>
+<a href="mailto:ronaksingh18062005@gmail.com"><img src="https://img.shields.io/badge/Gmail-111111?style=for-the-badge&logo=gmail&logoColor=white"/></a>
+<img src="https://komarev.com/ghpvc/?username=Pragylucky&label=Profile%20Views&color=111111&style=for-the-badge"/>
 
 </div>
 
@@ -48,16 +43,22 @@ I'm an **Electrical Engineering student** who fell for software. I like building
 
 <div align="center">
 
-<a href="https://pupmeow.in"><img src="https://img.shields.io/website?url=https%3A%2F%2Fpupmeow.in&label=LIVE%20at%20pupmeow.in&style=for-the-badge&color=0e7c72"/></a>
-<a href="https://www.instagram.com/pupmeow.in"><img src="https://img.shields.io/badge/Instagram-@pupmeow.in-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/></a>
+<a href="https://pupmeow.in"><img src="https://img.shields.io/website?url=https%3A%2F%2Fpupmeow.in&label=LIVE%20at%20pupmeow.in&style=for-the-badge&color=111111"/></a>
+<a href="https://www.instagram.com/pupmeow.in"><img src="https://img.shields.io/badge/Instagram-@pupmeow.in-111111?style=for-the-badge&logo=instagram&logoColor=white"/></a>
 
 **The neighbourhood app for dog and cat families in Delhi NCR**
 
-<img src="assets/paws.svg" width="100%" alt=""/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/pupmeow-walk-dark.svg"/>
+  <img src="assets/pupmeow-walk-light.svg" width="100%" alt="A cat and a dog chasing a ball"/>
+</picture>
 
 <a href="https://pupmeow.in"><img src="https://raw.githubusercontent.com/Pragylucky/PupMeow/main/docs/assets/screens/showcase.png" alt="PupMeow on a laptop and a phone" width="92%"/></a>
 
-<img src="assets/paws.svg" width="100%" alt=""/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/paws-dark.svg"/>
+  <img src="assets/paws-light.svg" width="100%" alt=""/>
+</picture>
 
 </div>
 
@@ -173,10 +174,19 @@ Forward kinematics for an RRR manipulator using the Denavit-Hartenberg conventio
 
 <div align="center">
 
-<img src="https://streak-stats.demolab.com/?user=Pragylucky&theme=tokyonight&hide_border=true&currStreakLabel=00F7FF&ringColor=7B2FF7&fire=FF9F1C" width="49%" alt="GitHub streak"/>
-<img src="https://leetcard.jacoblin.cool/Pragy_lucky?theme=dark&font=Karma&border=0&radius=6&colors=1A1B27,24283B,C0CAF5,A9B1D6,00F7FF,7B2FF7" width="49%" alt="LeetCode stats"/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com/?user=Pragylucky&theme=dark&hide_border=true&background=0D1117"/>
+  <img src="https://streak-stats.demolab.com/?user=Pragylucky&theme=default&hide_border=true" width="49%" alt="GitHub streak"/>
+</picture>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://leetcard.jacoblin.cool/Pragy_lucky?theme=dark&font=Karma&border=0&radius=6"/>
+  <img src="https://leetcard.jacoblin.cool/Pragy_lucky?theme=light&font=Karma&border=0&radius=6" width="49%" alt="LeetCode stats"/>
+</picture>
 
-<img src="https://leetcard.jacoblin.cool/Pragy_lucky?theme=dark&font=Karma&ext=heatmap" alt="LeetCode heatmap"/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://leetcard.jacoblin.cool/Pragy_lucky?theme=dark&font=Karma&ext=heatmap"/>
+  <img src="https://leetcard.jacoblin.cool/Pragy_lucky?theme=light&font=Karma&ext=heatmap" alt="LeetCode heatmap"/>
+</picture>
 
 </div>
 
@@ -214,6 +224,11 @@ I'm open to **internships, placements and collaborations**. If you've got someth
 
 <br/><br/>
 
-<img src="assets/footer.svg" width="100%" alt="Thanks for stopping by! Learn, Build, Ship, Repeat"/>
+<a href="mailto:ronaksingh18062005@gmail.com">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/footer-dark.svg"/>
+  <img src="assets/footer-light.svg" width="100%" alt="Thanks for stopping by! Learn, build, ship, repeat. ronaksingh18062005@gmail.com"/>
+</picture>
+</a>
 
 </div>
