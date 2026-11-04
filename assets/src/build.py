@@ -383,6 +383,125 @@ def footer(t):
     return svg(W, H, body, defs)
 
 
+# ---- project banners (animated, one per project) -----------------------------
+def banner_base(t, title, sub):
+    W, H = 480, 170
+    defs, back, edge = card(W, H, t)
+    return W, H, defs, back, edge, (
+        text(24, 38, title, 20, t["ink"], 800, "start", -0.3)
+        + text(24, 58, sub, 11, t["muted"], 500, "start", 1.5, MONO)
+    )
+
+
+def finsight(t):
+    ink, muted, soft = t["ink"], t["muted"], t["soft"]
+    W, H, defs, back, edge, head = banner_base(t, "FinSight AI", "MARKETS  ·  PORTFOLIO  ·  GEMINI")
+    pts = [(24, 140), (80, 118), (130, 128), (190, 92), (250, 104), (310, 70), (370, 84), (430, 44)]
+    d = "M" + " L".join(f"{x} {y}" for x, y in pts)
+    grid = "".join(f'<line x1="24" y1="{y}" x2="456" y2="{y}" stroke="{soft}" stroke-width="1.5" stroke-dasharray="3 6"/>' for y in (80, 110, 140))
+    bars = "".join(
+        f'<rect x="{x}" y="{150 - h}" width="10" height="{h}" rx="2" fill="{soft}"><animate attributeName="height" values="{h};{h + 12};{h}" dur="{2 + i * 0.3}s" repeatCount="indefinite"/>'
+        f'<animate attributeName="y" values="{150 - h};{138 - h};{150 - h}" dur="{2 + i * 0.3}s" repeatCount="indefinite"/></rect>'
+        for i, (x, h) in enumerate(zip(range(34, 450, 52), (14, 22, 18, 30, 24, 36, 28, 40)))
+    )
+    line = (
+        f'<path d="{d}" pathLength="100" fill="none" stroke="{ink}" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="100" stroke-dashoffset="100">'
+        f'<animate attributeName="stroke-dashoffset" values="100;0;0;0" keyTimes="0;0.5;0.9;1" dur="5s" repeatCount="indefinite"/></path>'
+    )
+    dot = (
+        f'<circle r="6" fill="{ink}"><animateMotion path="{d}" dur="5s" keyPoints="0;1;1" keyTimes="0;0.5;1" calcMode="linear" repeatCount="indefinite"/></circle>'
+    )
+    tag = (
+        f'<g transform="translate(372 24)" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.45;0.55;0.9;1" dur="5s" repeatCount="indefinite"/>'
+        f'<rect width="84" height="26" rx="13" fill="{t["paper"]}" stroke="{ink}" stroke-width="2"/>' + text(42, 17.5, "+12.4%", 12, ink, 700, "middle", 0.5, MONO) + "</g>"
+    )
+    return svg(W, H, back + head + grid + bars + line + dot + tag + edge, defs)
+
+
+def kinematics(t):
+    ink, muted, soft, paper = t["ink"], t["muted"], t["soft"], t["paper"]
+    W, H, defs, back, edge, head = banner_base(t, "Kinematics Sim", "3-DOF  ·  DENAVIT-HARTENBERG  ·  C++")
+    rot = lambda a, b, dur: (
+        f'<animateTransform attributeName="transform" type="rotate" values="{a};{b};{a}" keyTimes="0;0.5;1" calcMode="spline" '
+        f'keySplines="0.45 0 0.55 1;0.45 0 0.55 1" dur="{dur}s" repeatCount="indefinite"/>'
+    )
+    arm = (
+        f'<g transform="translate(330 148)">'
+        f'<rect x="-34" y="0" width="68" height="10" rx="5" fill="{ink}"/>'
+        f'<g>{rot(-55, -115, 4)}<line x1="0" y1="0" x2="62" y2="0" stroke="{ink}" stroke-width="9" stroke-linecap="round"/>'
+        f'<g transform="translate(62 0)"><g>{rot(35, -40, 4)}<line x1="0" y1="0" x2="50" y2="0" stroke="{muted}" stroke-width="7" stroke-linecap="round"/>'
+        f'<g transform="translate(50 0)"><g>{rot(20, -25, 4)}<line x1="0" y1="0" x2="26" y2="0" stroke="{ink}" stroke-width="5" stroke-linecap="round"/>'
+        f'<circle cx="28" r="5" fill="{paper}" stroke="{ink}" stroke-width="2.5"/></g></g>'
+        f'<circle r="6" fill="{paper}" stroke="{ink}" stroke-width="2.5"/></g></g>'
+        f'<circle r="7" fill="{paper}" stroke="{ink}" stroke-width="2.5"/></g></g>'
+    )
+    mat = "".join(
+        text(24, 92 + i * 17, row.replace(" ", "\u00a0"), 12, muted, 500, "start", 1, MONO) for i, row in enumerate(("[ c  -s   0   a·c ]", "[ s   c   0   a·s ]", "[ 0   0   1    d  ]", "[ 0   0   0    1  ]"))
+    )
+    return svg(W, H, back + head + mat + arm + edge, defs)
+
+
+def movies(t):
+    ink, muted, soft, paper = t["ink"], t["muted"], t["soft"], t["paper"]
+    W, H, defs, back, edge, head = banner_base(t, "Movie Explorer", "IMDB TOP 250  ·  VANILLA JS")
+    frames = "".join(
+        f'<g transform="translate({i * 80} 0)"><rect x="6" y="92" width="68" height="52" rx="5" fill="{paper}" stroke="{ink}" stroke-width="2.5"/>'
+        f'<path transform="translate(40 118) scale(1.5)" d="M0 -8 L2.4 -2.5 L8 -2 L3.8 2 L5 8 L0 5 L-5 8 L-3.8 2 L-8 -2 L-2.4 -2.5 Z" fill="{ink if i % 2 == 0 else soft}"/>'
+        + "".join(f'<rect x="{x + 6}" y="{y}" width="8" height="6" rx="1.5" fill="{ink}"/>' for x in (0, 20, 40, 60) for y in (80, 148))
+        + "</g>"
+        for i in range(8)
+    )
+    strip = (
+        f'<g><animateTransform attributeName="transform" type="translate" from="0 0" to="-160 0" dur="4s" repeatCount="indefinite"/>{frames}</g>'
+    )
+    clip = f'<clipPath id="s"><rect x="0" y="70" width="{W}" height="100"/></clipPath>'
+    return svg(W, H, back + head + f'<g clip-path="url(#s)">{strip}</g>' + edge, defs + clip)
+
+
+# ---- journey timeline ----------------------------------------------------------
+def journey(t):
+    W, H = 1000, 170
+    defs, back, edge = card(W, H, t)
+    ink, muted, paper = t["ink"], t["muted"], t["paper"]
+    steps = [("B.Tech EE", "engineering base"), ("DSA in C++", "LeetCode daily"), ("FinSight AI", "MERN + Gemini"), ("PupMeow", "live in Delhi NCR")]
+    xs = [130, 377, 623, 870]
+    line = (
+        f'<line x1="{xs[0]}" y1="78" x2="{xs[-1]}" y2="78" stroke="{ink}" stroke-width="3" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100">'
+        f'<animate attributeName="stroke-dashoffset" values="100;0;0;0" keyTimes="0;0.55;0.95;1" dur="8s" repeatCount="indefinite"/></line>'
+    )
+    nodes = ""
+    for i, ((a, b), x) in enumerate(zip(steps, xs)):
+        beg = 8 * 0.55 * i / (len(steps) - 1)
+        pop = (
+            f'<animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;{beg / 8:.3f};{beg / 8 + 0.04:.3f};0.95;1" dur="8s" repeatCount="indefinite"/>'
+        )
+        nodes += (
+            f'<g opacity="0">{pop}<circle cx="{x}" cy="78" r="12" fill="{paper}" stroke="{ink}" stroke-width="3"/><circle cx="{x}" cy="78" r="4.5" fill="{ink}"/>'
+            + text(x, 118, a, 17, ink, 800)
+            + text(x, 140, b, 12, muted, 500, "middle", 1, MONO)
+            + "</g>"
+        )
+    now = (
+        f'<g transform="translate({xs[-1]} 78)"><circle r="12" fill="none" stroke="{ink}" stroke-width="2"><animate attributeName="r" values="12;26" dur="2s" repeatCount="indefinite"/>'
+        f'<animate attributeName="opacity" values="0.7;0" dur="2s" repeatCount="indefinite"/></circle></g>'
+    )
+    body = back + text(500, 42, "THE JOURNEY SO FAR", 13, muted, 700, "middle", 5, MONO) + line + nodes + now + edge
+    return svg(W, H, body, defs)
+
+
+# ---- open to work pill -------------------------------------------------------
+def open_pill(t):
+    W, H = 520, 46
+    ink, paper = t["ink"], t["paper"]
+    body = (
+        f'<rect x="2" y="2" width="{W - 4}" height="{H - 4}" rx="21" fill="{paper}" stroke="{ink}" stroke-width="2"/>'
+        f'<circle cx="30" cy="23" r="6" fill="{ink}"/>'
+        f'<circle cx="30" cy="23" r="6" fill="none" stroke="{ink}" stroke-width="2"><animate attributeName="r" values="6;16" dur="1.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8;0" dur="1.8s" repeatCount="indefinite"/></circle>'
+        + text(52, 28, "OPEN TO WORK  ·  Product / Analyst internships & placements", 13, ink, 700, "start", 1, MONO)
+    )
+    return svg(W, H, body)
+
+
 def write(name, content):
     with open(os.path.join(OUT, name), "w") as f:
         f.write(content)
@@ -394,3 +513,8 @@ if __name__ == "__main__":
         write(f"pupmeow-walk-{mode}.svg", pupmeow_walk(t))
         write(f"paws-{mode}.svg", paws(t))
         write(f"footer-{mode}.svg", footer(t))
+        write(f"finsight-{mode}.svg", finsight(t))
+        write(f"kinematics-{mode}.svg", kinematics(t))
+        write(f"movies-{mode}.svg", movies(t))
+        write(f"journey-{mode}.svg", journey(t))
+        write(f"open-{mode}.svg", open_pill(t))

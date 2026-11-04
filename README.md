@@ -15,11 +15,27 @@
 <a href="https://www.linkedin.com/in/ronak-singh-79234328a/"><img src="https://img.shields.io/badge/LinkedIn-111111?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
 <a href="https://leetcode.com/u/Pragy_lucky/"><img src="https://img.shields.io/badge/LeetCode-111111?style=for-the-badge&logo=leetcode&logoColor=white"/></a>
 <a href="mailto:ronaksingh18062005@gmail.com"><img src="https://img.shields.io/badge/Gmail-111111?style=for-the-badge&logo=gmail&logoColor=white"/></a>
-<img src="https://komarev.com/ghpvc/?username=Pragylucky&label=Profile%20Views&color=111111&style=for-the-badge"/>
+<a href="https://drive.google.com/file/d/1wkdNoErlxDIUSd_1oeJ8f48BSLD0YG2S/view?usp=sharing"><img src="https://img.shields.io/badge/Resume-111111?style=for-the-badge&logo=googledrive&logoColor=white"/></a>
+
+<br/><br/>
+
+<a href="https://drive.google.com/file/d/1wkdNoErlxDIUSd_1oeJ8f48BSLD0YG2S/view?usp=sharing">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/open-dark.svg"/>
+  <img src="assets/open-light.svg" width="520" alt="Open to work: Product and Analyst internships"/>
+</picture>
+</a>
 
 </div>
 
----
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/paws-dark.svg"/>
+  <img src="assets/paws-light.svg" width="100%" alt=""/>
+</picture>
+
+</div>
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Waving%20Hand.png" width="34" alt="wave"/> Hey, I'm Ronak
 
@@ -32,10 +48,26 @@ I'm an **Electrical Engineering student** who fell for software. I like building
 🧠  Integrating AI (Gemini) and live financial data into real products
 🧮  Solving DSA problems on LeetCode in C++
 🦾  Writing robotics / kinematics simulators from scratch
-🎯  Looking for PRODUCT/ANALYST internships and placements
+🎯  Looking for Product / Analyst internships and placements
 ```
 
----
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/journey-dark.svg"/>
+  <img src="assets/journey-light.svg" width="100%" alt="Journey: B.Tech EE, DSA in C++, FinSight AI, PupMeow"/>
+</picture>
+
+</div>
+
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/paws-dark.svg"/>
+  <img src="assets/paws-light.svg" width="100%" alt=""/>
+</picture>
+
+</div>
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Rocket.png" width="34" alt="rocket"/> Featured Projects
 
@@ -94,6 +126,15 @@ When a pet goes missing in Delhi, the alert gets buried across fifty WhatsApp gr
 <tr>
 <td width="50%" valign="top">
 
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/finsight-dark.svg"/>
+  <img src="assets/finsight-light.svg" width="100%" alt="FinSight AI chart animation"/>
+</picture>
+
+</div>
+
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Chart%20Increasing.png" width="28" alt="chart"/> FinSight AI
 **AI-powered financial intelligence platform**
 
@@ -118,6 +159,15 @@ Research stocks, track a portfolio, build watchlists, read market news and ask a
 </td>
 <td width="50%" valign="top">
 
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/kinematics-dark.svg"/>
+  <img src="assets/kinematics-light.svg" width="100%" alt="Robot arm animation"/>
+</picture>
+
+</div>
+
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Robot.png" width="28" alt="robot"/> Autonomous Kinematics Simulator
 **3-DOF robotic arm, built from scratch**
 
@@ -140,6 +190,15 @@ Forward kinematics for an RRR manipulator using the Denavit-Hartenberg conventio
 <tr>
 <td colspan="2" valign="top">
 
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/movies-dark.svg"/>
+  <img src="assets/movies-light.svg" width="100%" alt="Film strip animation"/>
+</picture>
+
+</div>
+
 ### <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Clapper%20Board.png" width="28" alt="clapper"/> IMDb Top 250 Movie Explorer
 **Fast, responsive movie discovery in vanilla JS** &nbsp;·&nbsp; search by title, director or actor &nbsp;·&nbsp; genre and rating filters &nbsp;·&nbsp; details modal &nbsp;·&nbsp; favorites and watchlist in Local Storage
 
@@ -153,7 +212,14 @@ Forward kinematics for an RRR manipulator using the Denavit-Hartenberg conventio
 </tr>
 </table>
 
----
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/paws-dark.svg"/>
+  <img src="assets/paws-light.svg" width="100%" alt=""/>
+</picture>
+
+</div>
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Hammer%20and%20Wrench.png" width="34" alt="tools"/> Tech Stack
 
@@ -168,7 +234,14 @@ Forward kinematics for an RRR manipulator using the Denavit-Hartenberg conventio
 
 </div>
 
----
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/paws-dark.svg"/>
+  <img src="assets/paws-light.svg" width="100%" alt=""/>
+</picture>
+
+</div>
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bar%20Chart.png" width="34" alt="chart"/> GitHub Stats
 
@@ -200,7 +273,14 @@ Forward kinematics for an RRR manipulator using the Denavit-Hartenberg conventio
 </picture>
 </div>
 
----
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/paws-dark.svg"/>
+  <img src="assets/paws-light.svg" width="100%" alt=""/>
+</picture>
+
+</div>
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Travel%20and%20places/Compass.png" width="34" alt="compass"/> What I'm Working On
 
@@ -212,7 +292,14 @@ Forward kinematics for an RRR manipulator using the Denavit-Hartenberg conventio
 | 🎯 **Next** | Vets and groomers in PupMeow, inverse kinematics for the arm, real-time data in FinSight |
 | 💬 **Ask me about** | Next.js and Supabase, MERN, C++, kinematics, building with AI APIs |
 
----
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/paws-dark.svg"/>
+  <img src="assets/paws-light.svg" width="100%" alt=""/>
+</picture>
+
+</div>
 
 ## <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Hand%20gestures/Handshake.png" width="34" alt="handshake"/> Let's Connect
 
@@ -220,7 +307,7 @@ I'm open to **internships, placements and collaborations**. If you've got someth
 
 <div align="center">
 
-📧 [ronaksingh18062005@gmail.com](mailto:ronaksingh18062005@gmail.com) &nbsp;•&nbsp; 💼 [LinkedIn](https://www.linkedin.com/in/ronak-singh-79234328a/) &nbsp;•&nbsp; 🧩 [LeetCode](https://leetcode.com/u/Pragy_lucky/)
+📧 [ronaksingh18062005@gmail.com](mailto:ronaksingh18062005@gmail.com) &nbsp;•&nbsp; 💼 [LinkedIn](https://www.linkedin.com/in/ronak-singh-79234328a/) &nbsp;•&nbsp; 🧩 [LeetCode](https://leetcode.com/u/Pragy_lucky/) &nbsp;•&nbsp; 📄 [**Resume**](https://drive.google.com/file/d/1wkdNoErlxDIUSd_1oeJ8f48BSLD0YG2S/view?usp=sharing)
 
 <br/><br/>
 
