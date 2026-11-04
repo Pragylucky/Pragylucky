@@ -4,65 +4,85 @@
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00F7FF,100:7B2FF7&height=220&section=header&text=Ronak%20Singh&fontSize=64&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=Electrical%20Engineering%20Student%20%E2%80%A2%20Full%20Stack%20Developer&descAlignY=58&descSize=18" width="100%" alt="Ronak Singh banner"/>
+<img src="assets/header.svg" width="100%" alt="Ronak Singh"/>
 
 <a href="https://github.com/Pragylucky">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00F7FF&center=true&vCenter=true&width=800&lines=Building+full-stack+apps+with+React+%26+Node;Shipped+PupMeow+to+pupmeow.in;Practicing+DSA+on+LeetCode;Bridging+hardware+thinking+and+software;Open+to+internships+and+placements" alt="Typing animation"/>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=800&color=00F7FF&center=true&vCenter=true&repeat=true&width=900&height=50&lines=Start+with+the+problem%2C+not+the+tech+%F0%9F%8E%AF;Shipped+PupMeow+to+real+users+%F0%9F%90%BE;Turning+data+into+product+decisions+%F0%9F%93%8A;Engineer+by+training%2C+product+thinker+by+choice+%E2%9A%A1;Open+to+Product+%2F+Analyst+internships+%F0%9F%9A%80" alt="Typing animation"/>
 </a>
 
 <br/>
 
+<a href="https://pupmeow.in"><img src="https://img.shields.io/badge/See_my_product-pupmeow.in-0e7c72?style=for-the-badge"/></a>
 <a href="https://www.linkedin.com/in/ronak-singh-79234328a/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+<a href="mailto:ronaksingh18062005@gmail.com"><img src="https://img.shields.io/badge/Email_me-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/></a>
 <a href="https://leetcode.com/u/Pragy_lucky/"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=white"/></a>
-<a href="mailto:ronaksingh18062005@gmail.com"><img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/></a>
-<img src="https://komarev.com/ghpvc/?username=Pragylucky&label=Profile%20Views&color=00b8d4&style=for-the-badge"/>
 
 </div>
 
----
+<div align="center"><img src="assets/divider.svg" width="100%" alt=""/></div>
 
-## 👋 Hey, I'm Ronak
+<div align="center"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=26&duration=2500&pause=60000&color=00F7FF&center=true&vCenter=true&width=700&height=50&lines=%F0%9F%91%8B+Hey%2C+I%27m+Ronak" alt="👋 Hey, I'm Ronak"/></div>
 
-I'm an **Electrical Engineering student** who fell for software. I like building things end to end: a clean UI, a solid API, and some intelligence in the middle. My engineering background means I enjoy the maths-heavy, systems-level side of things just as much as shipping web apps.
+I'm an **Electrical Engineering student** who builds products end to end: find the problem, decide what *not* to build, ship it, and learn from what people actually do.
 
-```text
-🎓  B.Tech, Electrical Engineering
-⚛️  Building full-stack apps with the MERN stack
-🐾  Founder of PupMeow, live at pupmeow.in for Delhi NCR pet families
-🤖  Integrating AI (Gemini) and live financial data into real products
-🧮  Solving DSA problems on LeetCode in C++
-🤖  Writing robotics / kinematics simulators from scratch
-🎯  Looking for PRODUCT/ANALYST internships and placements
-```
+Engineering taught me to think in systems and numbers. Building products taught me to think in people.
 
----
+<div align="center"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=26&duration=2500&pause=60000&color=B57BFF&center=true&vCenter=true&width=700&height=50&lines=%F0%9F%A7%A0+How+I+think+about+products" alt="🧠 How I think about products"/></div>
 
-## 🚀 Featured Projects
+| | |
+|---|---|
+| 🎯 **Problem first** | I can't build until I can say who hurts, when, and why existing options fail them |
+| ✂️ **Opinionated scope** | The "no" list matters as much as the roadmap. PupMeow has no buying or selling of animals, on purpose |
+| 🔐 **Trust is a feature** | Phone numbers unlock only after both sides agree. An AI that flags emergencies instead of guessing |
+| 📊 **Data decides** | I want to measure what users do, not argue about what they might want |
+| 🚢 **Ship, then iterate** | A live product with real feedback beats a perfect idea in a doc |
 
-### ⭐ Flagship: PupMeow 🐾
+<div align="center"><img src="assets/divider.svg" width="100%" alt=""/></div>
+
+<div align="center"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=26&duration=2500&pause=60000&color=00F7FF&center=true&vCenter=true&width=700&height=50&lines=%F0%9F%9A%80+Product+Case+Studies" alt="🚀 Product Case Studies"/></div>
+
+### 🐾 PupMeow: the neighbourhood app for pet families in Delhi NCR
 
 <div align="center">
 
 <a href="https://pupmeow.in"><img src="https://img.shields.io/website?url=https%3A%2F%2Fpupmeow.in&label=LIVE%20at%20pupmeow.in&style=for-the-badge&color=0e7c72"/></a>
 <a href="https://www.instagram.com/pupmeow.in"><img src="https://img.shields.io/badge/Instagram-@pupmeow.in-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/></a>
 
-**The neighbourhood app for dog and cat families in Delhi NCR**
-
 <a href="https://pupmeow.in"><img src="https://raw.githubusercontent.com/Pragylucky/PupMeow/main/docs/assets/screens/showcase.png" alt="PupMeow on a laptop and a phone" width="92%"/></a>
 
 </div>
 
-When a pet goes missing in Delhi, the alert gets buried across fifty WhatsApp groups, and adoption in Instagram DMs often turns into a "transport fee" scam. PupMeow puts the pet, the owner and the neighbourhood in one place, and keeps conversations on WhatsApp where people already talk. **Free forever, and no buying or selling of animals.**
+<br/>
+
+**🔥 The problem.** When a pet goes missing in Delhi, the alert gets buried across fifty WhatsApp groups. Adoption in Instagram DMs often ends in a fake "transport fee" scam. Pet owners have no single trusted place.
+
+**👥 Who it's for.** Dog and cat families, adopters, and NGOs in Delhi NCR.
+
+**💡 The insight.** People already talk on WhatsApp, and they won't leave it. So PupMeow doesn't try to replace chat. It puts the pet, the owner and the neighbourhood in one place, then hands the conversation back to WhatsApp.
+
+**🧭 Product decisions I made, and why**
+
+| Decision | Why |
+|---|---|
+| **Free forever, no buying or selling** | Removes the scam incentive and builds trust from day one. Priced listings get removed |
+| **Keep chat on WhatsApp** | Zero new habit to learn, so less friction for adoption |
+| **Phone number unlocks only after both sides agree** | Protects privacy and filters out spam |
+| **A4 poster with QR + ready-made WhatsApp image for lost pets** | Meets people where the search actually happens: on the street and in groups |
+| **Emergency banner in the AI helper** | A pet-care bot has to know when to say "go to a vet now" |
+| **PWA instead of app-store first** | Ship fast, install in one tap, learn before investing in Android |
+
+**✨ What's inside**
 
 | | |
 |---|---|
-| 🚨 **Lost & Found** | Report in a minute, print an A4 poster with QR, share a ready-made WhatsApp image, and let neighbours tap "I saw him / her" |
-| 💛 **Free adoption** | Listings from families and NGOs with age, vaccine and sterilisation filters; priced listings get removed |
-| 🤝 **Playdates** | Request and accept; the number unlocks only after both sides agree |
-| 💉 **Pet health** | Vaccines, deworming, vet visits and weight chart, with Google Calendar or .ics reminders |
-| 🤖 **Kaia, the AI helper** | Pet-care chat with an emergency banner for anything that sounds urgent |
-| 📣 **Feed & community** | Photos, hashtags, follows, comments and search |
-| 📱 **PWA** | Installable, dark mode, offline page |
+| 🚨 **Lost & Found** | Report in a minute, print a poster, share to WhatsApp, neighbours tap "I saw him / her" |
+| 💛 **Free adoption** | Families and NGOs, with age, vaccine and sterilisation filters |
+| 🤝 **Playdates** | Request and accept, with mutual consent built in |
+| 💉 **Pet health** | Vaccines, deworming, vet visits, weight chart, calendar reminders |
+| 🤖 **Kaia, AI helper** | Pet-care chat with emergency detection |
+| 📣 **Community feed** | Photos, hashtags, follows, comments, search |
+
+**🛠️ Built with**
 
 ![Next.js](https://img.shields.io/badge/Next.js_15-000000?logo=nextdotjs&logoColor=white&style=flat-square)
 ![React](https://img.shields.io/badge/React_19-61DAFB?logo=react&logoColor=black&style=flat-square)
@@ -74,25 +94,21 @@ When a pet goes missing in Delhi, the alert gets buried across fifty WhatsApp gr
 ![Vitest](https://img.shields.io/badge/Vitest-6E9F18?logo=vitest&logoColor=white&style=flat-square)
 ![Playwright](https://img.shields.io/badge/Playwright-2EAD33?logo=playwright&logoColor=white&style=flat-square)
 
+**🔭 What's next:** Android app, vets and groomers directory, and growing neighbourhood by neighbourhood.
+
 🌐 [**Live at pupmeow.in**](https://pupmeow.in) &nbsp;•&nbsp; 📲 [**Get the app**](https://pupmeow.in/get-app) &nbsp;•&nbsp; 💻 [**Source**](https://github.com/Pragylucky/PupMeow)
 
----
+<div align="center"><img src="assets/divider.svg" width="100%" alt=""/></div>
 
-### More projects
+### 📈 FinSight AI: investing research without the tab chaos
 
-<table>
-<tr>
-<td width="50%" valign="top">
-
-### 📈 FinSight AI
-**AI-powered financial intelligence platform**
-
-Research stocks, track a portfolio, build watchlists, read market news and ask an AI assistant, all from one dashboard.
+**🔥 Problem:** Retail investors juggle one tab for prices, one for news, one for their portfolio and one for questions.
+**💡 Idea:** One dashboard that answers *"how am I doing, and why?"* in plain language.
 
 - 📊 Dashboard with P&L, sector allocation, gainers and losers
-- 🏢 Company analysis: financials, ratios, charts, AI summary
+- 🏢 Company analysis: financials, ratios, charts and an AI summary
 - 💼 Portfolio and watchlist management
-- 🤖 Gemini-powered financial assistant
+- 🤖 Gemini-powered assistant that explains the numbers
 - 🔐 JWT auth with email verification
 
 ![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black&style=flat-square)
@@ -103,21 +119,20 @@ Research stocks, track a portfolio, build watchlists, read market news and ask a
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white&style=flat-square)
 ![Gemini](https://img.shields.io/badge/Gemini_AI-4285F4?logo=googlegemini&logoColor=white&style=flat-square)
 
-[🌐 **Live Demo**](https://fin-sight-ai-six-kappa.vercel.app) • [💻 **Source**](https://github.com/Pragylucky/FinSightAi)
+**🔭 Next:** real-time market data. [🌐 **Live Demo**](https://fin-sight-ai-six-kappa.vercel.app) • [💻 **Source**](https://github.com/Pragylucky/FinSightAi)
 
-</td>
+<div align="center"><img src="assets/divider.svg" width="100%" alt=""/></div>
+
+### 🧪 Smaller builds that sharpen my engineering
+
+<table>
+<tr>
 <td width="50%" valign="top">
 
-### 🦾 Autonomous Kinematics Simulator
-**3-DOF robotic arm, built from scratch**
+#### 🦾 Autonomous Kinematics Simulator
+A 3-DOF robotic arm, built from scratch in C++ with no robotics libraries. Denavit-Hartenberg forward kinematics, custom `Vector3` and `Matrix4x4` classes, an ASCII visualiser and MATLAB plots.
 
-Forward kinematics for an RRR manipulator using the Denavit-Hartenberg convention, with no robotics libraries.
-
-- 🧮 Custom `Vector3` and `Matrix4x4` classes
-- 🕹️ Interactive CLI simulator with ASCII visualizer
-- 📐 Homogeneous transformation matrices
-- 📊 MATLAB visualization and demo mode
-- 🏗️ Clean OOP architecture, CMake build
+*Why it matters:* it's where I learned to break a hard system into clean, testable pieces.
 
 ![C++](https://img.shields.io/badge/C++17-00599C?logo=cplusplus&logoColor=white&style=flat-square)
 ![MATLAB](https://img.shields.io/badge/MATLAB-0076A8?style=flat-square)
@@ -126,12 +141,12 @@ Forward kinematics for an RRR manipulator using the Denavit-Hartenberg conventio
 [💻 **Source**](https://github.com/Pragylucky/Autonomous-kinematics-simulator)
 
 </td>
-</tr>
-<tr>
-<td colspan="2" valign="top">
+<td width="50%" valign="top">
 
-### 🎬 IMDb Top 250 Movie Explorer
-**Fast, responsive movie discovery in vanilla JS** &nbsp;·&nbsp; search by title, director or actor &nbsp;·&nbsp; genre and rating filters &nbsp;·&nbsp; details modal &nbsp;·&nbsp; favorites and watchlist in Local Storage
+#### 🎬 IMDb Top 250 Explorer
+Fast movie discovery in vanilla JS. Search by title, director or actor, filter by genre and rating, and keep favourites and a watchlist.
+
+*Why it matters:* it was my first lesson in making search and filters feel effortless.
 
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black&style=flat-square)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white&style=flat-square)
@@ -143,61 +158,58 @@ Forward kinematics for an RRR manipulator using the Denavit-Hartenberg conventio
 </tr>
 </table>
 
----
+<div align="center"><img src="assets/divider.svg" width="100%" alt=""/></div>
 
-## 🛠️ Tech Stack
+<div align="center"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=26&duration=2500&pause=60000&color=B57BFF&center=true&vCenter=true&width=700&height=50&lines=%F0%9F%A7%B0+My+Toolkit" alt="🧰 My Toolkit"/></div>
 
 <div align="center">
 
 | | |
 |---|---|
-| **Languages** | <img src="https://skillicons.dev/icons?i=cpp,js,html,css,matlab" /> |
-| **Frontend** | <img src="https://skillicons.dev/icons?i=nextjs,react,ts,vite,tailwind" /> |
-| **Backend & DB** | <img src="https://skillicons.dev/icons?i=nodejs,express,supabase,postgres,mongodb" /> |
-| **Tools & Deploy** | <img src="https://skillicons.dev/icons?i=git,github,vscode,vercel,cmake" /> |
+| **🎯 Product** | Problem discovery • Scoping and prioritisation • User flows • Trade-off decisions • Shipping and iterating |
+| **📊 Analytics** | Turning data into decisions • Metrics thinking • Dashboards • Financial data |
+| **💻 Build** | <img src="https://skillicons.dev/icons?i=cpp,js,ts,react,nextjs,nodejs,express,supabase,postgres,mongodb,tailwind,vercel,git" /> |
 
 </div>
 
----
+<div align="center"><img src="assets/divider.svg" width="100%" alt=""/></div>
 
-## 📊 GitHub Stats
+<div align="center"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=26&duration=2500&pause=60000&color=00F7FF&center=true&vCenter=true&width=700&height=50&lines=%F0%9F%93%8A+Activity" alt="📊 Activity"/></div>
 
 <div align="center">
 
 <img height="170" src="https://github-readme-stats.vercel.app/api?username=Pragylucky&show_icons=true&theme=tokyonight&hide_border=true&count_private=true"/>
 <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Pragylucky&layout=compact&theme=tokyonight&hide_border=true"/>
 
-<img src="https://streak-stats.demolab.com/?user=Pragylucky&theme=tokyonight&hide_border=true"/>
+<img src="https://streak-stats.demolab.com/?user=Pragylucky&theme=tokyonight&hide_border=true&currStreakLabel=00F7FF&ringColor=7B2FF7&fire=FF9F1C"/>
 
 <img src="https://leetcard.jacoblin.cool/Pragy_lucky?theme=dark&font=Karma&ext=heatmap"/>
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Pragylucky/Pragylucky/output/github-snake-dark.svg"/>
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Pragylucky/Pragylucky/output/github-snake.svg"/>
+  <img alt="Contribution snake" src="https://raw.githubusercontent.com/Pragylucky/Pragylucky/output/github-snake-dark.svg"/>
+</picture>
+
 </div>
 
-<details>
-<summary><b>📈 Contribution graph</b></summary>
-<br/>
-<div align="center">
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Pragylucky&theme=tokyo-night&hide_border=true"/>
-</div>
-</details>
+<div align="center"><img src="assets/divider.svg" width="100%" alt=""/></div>
 
----
-
-## 🧭 What I'm Working On
+<div align="center"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=26&duration=2500&pause=60000&color=B57BFF&center=true&vCenter=true&width=700&height=50&lines=%F0%9F%A7%AD+Right+Now" alt="🧭 Right Now"/></div>
 
 | | |
 |---|---|
-| 🔭 **Now** | Growing PupMeow in Delhi NCR (Android app next), polishing FinSight AI, building my portfolio site |
-| 🌱 **Learning** | Next.js, TypeScript, Postgres and system design basics |
-| 🧠 **Practicing** | DSA daily on [LeetCode](https://leetcode.com/u/Pragy_lucky/) |
-| 🎯 **Next** | Vets and groomers in PupMeow, inverse kinematics for the arm, real-time data in FinSight |
-| 💬 **Ask me about** | Next.js and Supabase, MERN, C++, kinematics, building with AI APIs |
+| 🔭 **Building** | Growing PupMeow across Delhi NCR, polishing FinSight AI, building my portfolio site |
+| 🌱 **Learning** | Product analytics, Next.js, TypeScript, Postgres, system design basics |
+| 🧠 **Practising** | DSA daily on [LeetCode](https://leetcode.com/u/Pragy_lucky/) |
+| 🎯 **Looking for** | **Product / Analyst internships and placements** |
+| 💬 **Ask me about** | Taking a product from zero to live, scoping an MVP, AI in products, Next.js and Supabase |
 
----
+<div align="center"><img src="assets/divider.svg" width="100%" alt=""/></div>
 
-## 🤝 Let's Connect
+<div align="center"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=26&duration=2500&pause=60000&color=00F7FF&center=true&vCenter=true&width=700&height=50&lines=%F0%9F%A4%9D+Let%27s+Talk" alt="🤝 Let's Talk"/></div>
 
-I'm open to **internships, placements and collaborations**. If you've got something interesting in web, AI or robotics, reach out.
+If you're building something people actually need, or hiring someone who cares about the *why* as much as the *how*, I'd love to hear from you.
 
 <div align="center">
 
@@ -205,8 +217,8 @@ I'm open to **internships, placements and collaborations**. If you've got someth
 
 <br/>
 
-**Learn → Build → Ship → Repeat** ⚡
+<br/>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:7B2FF7,100:00F7FF&height=120&section=footer" width="100%"/>
+<img src="assets/footer.svg" width="100%" alt="Problem, Build, Ship, Learn, Repeat"/>
 
 </div>

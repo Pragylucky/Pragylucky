@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="200" viewBox="0 0 1000 200">
+<defs>
+<linearGradient id="fg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7b2ff7"/><stop offset="0.5" stop-color="#00f7ff"/><stop offset="1" stop-color="#7b2ff7"/><animate attributeName="x1" values="-1;0" dur="5s" repeatCount="indefinite"/><animate attributeName="x2" values="0;1" dur="5s" repeatCount="indefinite"/></linearGradient>
+<linearGradient id="fb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b0820" stop-opacity="0"/><stop offset="1" stop-color="#0b0820"/></linearGradient>
+</defs>
+<rect width="1000" height="200" fill="url(#fb)"/>
+<path d="M0 110 Q125.0 88 250.0 110 T500 110 Q625.0 88 750.0 110 T1000 110 Q1125.0 88 1250.0 110 T1500 110 Q1625.0 88 1750.0 110 T2000 110 Q2125.0 88 2250.0 110 T2500 110 V200 H0 Z" fill="#7b2ff7" opacity="0.35"><animateTransform attributeName="transform" type="translate" from="0" to="-1000" dur="14s" repeatCount="indefinite"/></path>
+<path d="M0 125 Q125.0 107 250.0 125 T500 125 Q625.0 107 750.0 125 T1000 125 Q1125.0 107 1250.0 125 T1500 125 Q1625.0 107 1750.0 125 T2000 125 Q2125.0 107 2250.0 125 T2500 125 V200 H0 Z" fill="#00f7ff" opacity="0.3"><animateTransform attributeName="transform" type="translate" from="-1000" to="0" dur="10s" repeatCount="indefinite"/></path>
+<path d="M0 145 Q125.0 131 250.0 145 T500 145 Q625.0 131 750.0 145 T1000 145 Q1125.0 131 1250.0 145 T1500 145 Q1625.0 131 1750.0 145 T2000 145 Q2125.0 131 2250.0 145 T2500 145 V200 H0 Z" fill="#b57bff" opacity="0.45"><animateTransform attributeName="transform" type="translate" from="0" to="-1000" dur="7s" repeatCount="indefinite"/></path>
+<rect y="165" width="1000" height="35" fill="#0b0820"/>
+<g font-family="'Segoe UI',Arial,sans-serif" text-anchor="middle">
+<text x="500" y="186" font-size="16" letter-spacing="6" fill="url(#fg)" font-weight="700">PROBLEM  →  BUILD  →  SHIP  →  LEARN  →  REPEAT<animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/></text>
+</g>
+</svg>
