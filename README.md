@@ -17,17 +17,21 @@
 <a href="mailto:ronaksingh18062005@gmail.com"><img src="https://img.shields.io/badge/Email_me-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/></a>
 <a href="https://leetcode.com/u/Pragy_lucky/"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=white"/></a>
 
+<br/><br/>
+
+<img src="assets/strip.svg" width="100%" alt="Projects built, live products, daily DSA"/>
+
 </div>
 
 <div align="center"><img src="assets/divider.svg" width="100%" alt=""/></div>
 
-<div align="center"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=26&duration=2500&pause=60000&color=00F7FF&center=true&vCenter=true&width=700&height=50&lines=%F0%9F%91%8B+Hey%2C+I%27m+Ronak" alt="👋 Hey, I'm Ronak"/></div>
+<div align="center"><img src="assets/title-hey.svg" width="100%" alt="👋 Hey, I'm Ronak"/></div>
 
 I'm an **Electrical Engineering student** who builds products end to end: find the problem, decide what *not* to build, ship it, and learn from what people actually do.
 
 Engineering taught me to think in systems and numbers. Building products taught me to think in people.
 
-<div align="center"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=26&duration=2500&pause=60000&color=B57BFF&center=true&vCenter=true&width=700&height=50&lines=%F0%9F%A7%A0+How+I+think+about+products" alt="🧠 How I think about products"/></div>
+<div align="center"><img src="assets/title-think.svg" width="100%" alt="🧠 How I think about products"/></div>
 
 | | |
 |---|---|
@@ -39,7 +43,7 @@ Engineering taught me to think in systems and numbers. Building products taught 
 
 <div align="center"><img src="assets/divider.svg" width="100%" alt=""/></div>
 
-<div align="center"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=26&duration=2500&pause=60000&color=00F7FF&center=true&vCenter=true&width=700&height=50&lines=%F0%9F%9A%80+Product+Case+Studies" alt="🚀 Product Case Studies"/></div>
+<div align="center"><img src="assets/title-cases.svg" width="100%" alt="🚀 Product Case Studies"/></div>
 
 ### 🐾 PupMeow: the neighbourhood app for pet families in Delhi NCR
 
@@ -160,7 +164,7 @@ Fast movie discovery in vanilla JS. Search by title, director or actor, filter b
 
 <div align="center"><img src="assets/divider.svg" width="100%" alt=""/></div>
 
-<div align="center"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=26&duration=2500&pause=60000&color=B57BFF&center=true&vCenter=true&width=700&height=50&lines=%F0%9F%A7%B0+My+Toolkit" alt="🧰 My Toolkit"/></div>
+<div align="center"><img src="assets/title-toolkit.svg" width="100%" alt="🧰 My Toolkit"/></div>
 
 <div align="center">
 
@@ -174,12 +178,10 @@ Fast movie discovery in vanilla JS. Search by title, director or actor, filter b
 
 <div align="center"><img src="assets/divider.svg" width="100%" alt=""/></div>
 
-<div align="center"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=26&duration=2500&pause=60000&color=00F7FF&center=true&vCenter=true&width=700&height=50&lines=%F0%9F%93%8A+Activity" alt="📊 Activity"/></div>
+<div align="center"><img src="assets/title-activity.svg" width="100%" alt="📊 Activity"/></div>
 
 <div align="center">
 
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=Pragylucky&show_icons=true&theme=tokyonight&hide_border=true&count_private=true"/>
-<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Pragylucky&layout=compact&theme=tokyonight&hide_border=true"/>
 
 <img src="https://streak-stats.demolab.com/?user=Pragylucky&theme=tokyonight&hide_border=true&currStreakLabel=00F7FF&ringColor=7B2FF7&fire=FF9F1C"/>
 
@@ -195,7 +197,7 @@ Fast movie discovery in vanilla JS. Search by title, director or actor, filter b
 
 <div align="center"><img src="assets/divider.svg" width="100%" alt=""/></div>
 
-<div align="center"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=26&duration=2500&pause=60000&color=B57BFF&center=true&vCenter=true&width=700&height=50&lines=%F0%9F%A7%AD+Right+Now" alt="🧭 Right Now"/></div>
+<div align="center"><img src="assets/title-now.svg" width="100%" alt="🧭 Right Now"/></div>
 
 | | |
 |---|---|
@@ -207,7 +209,7 @@ Fast movie discovery in vanilla JS. Search by title, director or actor, filter b
 
 <div align="center"><img src="assets/divider.svg" width="100%" alt=""/></div>
 
-<div align="center"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=26&duration=2500&pause=60000&color=00F7FF&center=true&vCenter=true&width=700&height=50&lines=%F0%9F%A4%9D+Let%27s+Talk" alt="🤝 Let's Talk"/></div>
+<div align="center"><img src="assets/title-talk.svg" width="100%" alt="🤝 Let's Talk"/></div>
 
 If you're building something people actually need, or hiring someone who cares about the *why* as much as the *how*, I'd love to hear from you.
 
