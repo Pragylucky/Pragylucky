@@ -15,6 +15,7 @@
 <a href="https://www.linkedin.com/in/ronak-singh-79234328a/"><img src="https://img.shields.io/badge/LinkedIn-111111?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
 <a href="https://leetcode.com/u/Pragy_lucky/"><img src="https://img.shields.io/badge/LeetCode-111111?style=for-the-badge&logo=leetcode&logoColor=white"/></a>
 <a href="mailto:ronaksingh18062005@gmail.com"><img src="https://img.shields.io/badge/Gmail-111111?style=for-the-badge&logo=gmail&logoColor=white"/></a>
+<a href="https://pragylucky.github.io/"><img src="https://img.shields.io/badge/Portfolio-111111?style=for-the-badge&logo=githubpages&logoColor=white"/></a>
 <a href="https://drive.google.com/file/d/1wkdNoErlxDIUSd_1oeJ8f48BSLD0YG2S/view?usp=sharing"><img src="https://img.shields.io/badge/Resume-111111?style=for-the-badge&logo=googledrive&logoColor=white"/></a>
 
 <br/><br/>
@@ -286,7 +287,7 @@ Forward kinematics for an RRR manipulator using the Denavit-Hartenberg conventio
 
 | | |
 |---|---|
-| 🔭 **Now** | Growing PupMeow in Delhi NCR (Android app next), polishing FinSight AI, building my portfolio site |
+| 🔭 **Now** | Growing PupMeow in Delhi NCR (Android app next), polishing FinSight AI, keeping my [portfolio site](https://pragylucky.github.io/) fresh |
 | 🌱 **Learning** | Next.js, TypeScript, Postgres and system design basics |
 | 🧠 **Practicing** | DSA daily on [LeetCode](https://leetcode.com/u/Pragy_lucky/) |
 | 🎯 **Next** | Vets and groomers in PupMeow, inverse kinematics for the arm, real-time data in FinSight |
@@ -307,7 +308,7 @@ I'm open to **internships, placements and collaborations**. If you've got someth
 
 <div align="center">
 
-📧 [ronaksingh18062005@gmail.com](mailto:ronaksingh18062005@gmail.com) &nbsp;•&nbsp; 💼 [LinkedIn](https://www.linkedin.com/in/ronak-singh-79234328a/) &nbsp;•&nbsp; 🧩 [LeetCode](https://leetcode.com/u/Pragy_lucky/) &nbsp;•&nbsp; 📄 [**Resume**](https://drive.google.com/file/d/1wkdNoErlxDIUSd_1oeJ8f48BSLD0YG2S/view?usp=sharing)
+📧 [ronaksingh18062005@gmail.com](mailto:ronaksingh18062005@gmail.com) &nbsp;•&nbsp; 💼 [LinkedIn](https://www.linkedin.com/in/ronak-singh-79234328a/) &nbsp;•&nbsp; 🧩 [LeetCode](https://leetcode.com/u/Pragy_lucky/) &nbsp;•&nbsp; 🌐 [**Portfolio**](https://pragylucky.github.io/) &nbsp;•&nbsp; 📄 [**Resume**](https://drive.google.com/file/d/1wkdNoErlxDIUSd_1oeJ8f48BSLD0YG2S/view?usp=sharing)
 
 <br/><br/>
 
